@@ -14,12 +14,16 @@
         * {
             margin: 0;
             padding: 0;
+            list-style: none;
+            text-decoration: none;
         }
 
         body {
             background-color: rgb(0, 0, 33);
             color: white;
             font-family: 'poppins', sans-serif;
+            overflow-x: hidden;
+            /* ✅ SCROLLBAR FIX */
         }
 
         nav {
@@ -46,14 +50,12 @@
         }
 
         nav ul li a:hover {
-            text-decoration: none;
             color: rgb(114, 175, 232);
             font-size: 1.04rem;
         }
 
         .left {
             font-size: 1.5rem;
-            /*Beauty Gupta's Portfolio*/
         }
 
         .firstSection {
@@ -67,21 +69,43 @@
             width: 30%;
         }
 
-        .leftSection {
-            font-size: 2rem;
+        .buttons {
+            margin-top: 20px;
+        }
 
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 10px 0 0;
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: 0.3s ease;
         }
-        .leftSection .buttons{
-            padding: 50px;
+
+        .btn:hover {
+            background-color: #0097a7;
+            transform: scale(1.05);
         }
-        .leftSection .btn {
-           padding: 12px;
-           background: #1e2167;
-           color: white;
-           border: 2px solid white;
-           border-radius: 6px;
-           font-size: 20px;
-           cursor: pointer;
+
+        .leftSection h2 {
+            font-size: 2rem;
+        }
+
+        .rightSection {
+            height: 500px;
+            width: 500px;
+        }
+
+        .pro-img {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            background-image: url('./img1.jpeg');
+            background-position: top;
+            background-size: cover;
         }
 
         .rightSection img {
@@ -107,14 +131,10 @@
             height: 80vh;
         }
 
-        .secondSection {
-            font: 1.6rem;
-        }
-
         .secondSection .box {
             background-color: beige;
             width: 90vw;
-            height: 2px; 
+            height: 2px;
             margin: 56px 0;
             display: flex;
         }
@@ -146,30 +166,36 @@
             width: 150px;
             font-size: 9px;
         }
-        footer{
+
+        footer {
             background-color: rgb(66, 67, 67);
-            
-
+            color: white;
+            padding: 40px 0 0 0;
         }
-        .footer{
+
+        .footer-container {
             display: flex;
-            padding:23px 122px;
-            justify-content: space-evenly;
-        }
-        .footer ul{
-            list-style: none;
-        }
-        .footer> div{
-            width:223px;
-            padding: 12px 0;
-
-
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: auto;
         }
 
-        footer .footer-rights {
+        .footer-section {
+            width: 250px;
+            margin: 20px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+        }
+
+        .footer-bottom {
             text-align: center;
-            justify-content: center;
-            color: gray;
+            padding: 15px;
+            background-color: #000;
+            margin-top: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -180,41 +206,57 @@
             <div class="left">Beauty Gupta's Portfolio</div>
             <div class="right"></div>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">Services</a></li>
-                <li><a href="/">Project</a></li>
-                <li><a href="/">Contact Me</a></li>
-                <li><a href="/">Feedback</a></li>
+                <li><a href="#firstSection">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="mailto:guptabeauty138@gmail.com">Contact Me</a></li>
+                <li><a href="#">Feedback</a></li>
             </ul>
 
         </nav>
     </header>
     <main>
-        <section class="firstSection">
+        <section id="firstSection" class="firstSection">
             <div class="leftSection">
-                Hi I am<span class="purple"> Beauty Gupta </span>passoniate developer
-                of website.
-                <div>I am a self motivated.</div>
+                <h2>Hi I am<span class="purple"> Beauty Gupta </span>passoniate developer
+                    of website.</h2>
+                <h2>I am a self motivated.</h2>
 
                 <!-- Element to contain animated typing (type in google -typed js then click github )-->
                 <span id="element"></span>
                 <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
 
                 <div class="buttons">
-                    <button class="btn"> Hire Me</button>
-                    <a href="myresume(1).pdf" target="_blank"download>
-                     <button class="btn">Download Resume</button></a>
-                     <a href="mail to : guptabeauty138@gmail.com">
-                     <button class="btn"> Email</button></a>
-                     <a href="contact me : 8709233288">
-                        <button class="btn">contact me</button>
-                     </a>
-                    
+
+                    <!-- Hire Me (LinkedIn Profile) -->
+                    <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
+                        target="_blank" class="btn">
+                        Hire Me
+                    </a>
+
+                    <!-- Download Resume -->
+                    <a href="./resources/myresume.pdf" target="_blank" download class="btn">
+                        Download Resume
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:guptabeauty138@gmail.com" class="btn">
+                        Email
+                    </a>
+
+                    <!-- Contact (Phone Call) -->
+                    <a href="tel:+918709233288" class="btn">
+                        Contact Me
+                    </a>
+
                 </div>
+
             </div>
-            <div class="rightSection"> <img src="img1.jpeg" alt style=" width: 50;
-            margin: 45px 0; ">
+            <div class="rightSection">
+                <div class="pro-img"></div>
+                <!-- <img src="img1.jpeg" alt style=" width: 50;
+            margin: 45px 0; "> -->
             </div>
         </section>
         <hr>
@@ -224,140 +266,129 @@
             <h2>Work Experience</h2>
             <div class="box">
                 <div class="vertical">
-                    <img class="image-top" 
-                        src="html.avif"
-                        alt="">
+                    <img class="image-top" src="html.avif" alt="">
                     <div class="vertical-title">
                         HTML Developer (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Developed structured and semantic web pages using HTML5. Focused on creating responsive layouts,
+                        organizing content properly, and improving accessibility standards to ensure better user
+                        experience across different browsers and devices.
                     </div>
                 </div>
-                    <div class="vertical">
-                    <img class="image-top"
-                        src="sql.png"
-                        alt="">
+
+                <div class="vertical">
+                    <img class="image-top" src="sql.png" alt="">
                     <div class="vertical-title">
                         MySQL Developer (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Designed and managed relational databases using MySQL. Worked on writing optimized queries,
+                        creating tables, managing relationships, and ensuring secure data storage for efficient and
+                        reliable application performance.
                     </div>
                 </div>
-                
+
                 <div class="vertical">
-                    <img class="image-top"
-                        src="java.png"
-                        alt="">
+                    <img class="image-top" src="java.png" alt="">
                     <div class="vertical-title">
                         Java Developer (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Built object-oriented applications using Java. Implemented core concepts like inheritance,
+                        polymorphism, and exception handling while developing console-based and basic GUI projects to
+                        strengthen programming fundamentals.
                     </div>
                 </div>
-                 
+
                 <div class="vertical">
-                    <img class="image-top"
-                        src="css.png"
-                        alt="">
+                    <img class="image-top" src="css.png" alt="">
                     <div class="vertical-title">
-                        css Developer (2024-2025)
+                        CSS Developer (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Styled and enhanced web interfaces using CSS3. Applied Flexbox, Grid, and responsive design
+                        techniques to create visually appealing layouts with smooth transitions and improved overall
+                        website presentation.
                     </div>
                 </div>
-                 
+
                 <div class="vertical">
-                    <img class="image-top"
-                        src="js.png"
-                        alt="">
+                    <img class="image-top" src="js.png" alt="">
                     <div class="vertical-title">
-                        Js Developer (2024-2025)
+                        JS Developer (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Developed interactive web features using JavaScript. Implemented DOM manipulation, event
+                        handling, form validation, and basic logic-building projects to improve dynamic behavior and
+                        user interaction on websites.
                     </div>
                 </div>
+
                 <div class="vertical">
-                    <img class="image-top"
-                        src="ns.jpg"
-                        alt="">
+                    <img class="image-top" src="ns.jpg" alt="">
                     <div class="vertical-title">
                         Node.js Developer (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Created backend services using Node.js and Express. Worked on REST APIs, server-side logic, and
+                        database integration to build scalable and efficient web applications with secure authentication
+                        features.
                     </div>
                 </div>
+
                 <div class="vertical">
-                    <img class="image-top"
-                        src="c.png"
-                        alt="">
+                    <img class="image-top" src="c.png" alt="">
                     <div class="vertical-title">
                         C Language (2024-2025)
                     </div>
                     <div class="vertical-desc">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aut mollitia, nulla amet itaque aperiam, voluptates totam temporibus animi
-                        laborum incidunt officiis repudiandae odio iusto ratione. Quos, modi veritatis! Obcaecati,
-                        voluptatibus!
+                        Strengthened programming fundamentals using C language. Practiced problem-solving through loops,
+                        arrays, pointers, functions, and basic data structures to build a strong foundation in core
+                        programming concepts.
                     </div>
                 </div>
+            </div>
+
         </section>
     </main>
 
     <footer>
-        <div class="footer">
-            <div class="footer-first"></div>
-            <h3>Beauty Gupta's Developer Portfolio</h3>
-            <div class="footer-second"></div>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Services</li>
-                
-            </ul>
-<div class="footer-third"></div>
-<ul>
-    <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Services</li>
-</ul>
-            <div class="footer-fourth"></div>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Services</li>
-            </ul>
-            <div class="footer-rights">
-            copyright &#169; beautyguptaportfolio.com | All rights reserved
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>Beauty Gupta</h3>
+                <p>Passionate Electronics and Web Developer focused on building responsive and user-friendly web
+                    applications.</p>
             </div>
-        
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#firstSection">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="mailto:guptabeauty138@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Skills</h4>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Beauty Gupta | All Rights Reserved
+        </div>
     </footer>
+
     <script src="<script src=" https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>"
     <!-- Load library from the CDN -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
